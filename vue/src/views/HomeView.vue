@@ -1,5 +1,5 @@
 <template>
-  <div class="container">borough="call.borough"
+  <div class="container">
     <Card v-for="(call, index) in calls" :key="call.unique_key" :id="index + 1" :request="call"> </Card>
   </div>
 </template>
