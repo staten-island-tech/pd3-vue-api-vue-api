@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <Card v-for="call in calls" :key="call" :id="index + 1" :calls="call"> </Card>
+  <div class="container">borough="call.borough"
+    <Card v-for="(call, index) in calls" :key="call.unique_key" :id="index + 1" :request="call"> </Card>
   </div>
 </template>
 

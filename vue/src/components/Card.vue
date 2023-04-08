@@ -1,23 +1,21 @@
 <template>
   <div class="card">
-    <h2>{{ complaintType }}</h2>
-    <p>{{ description }}</p>
-    <p>Called {{ agencyName }}</p>
-    <p>Address:{{ address }}</p>
-    <p>Date:{{ date }}</p>
-    <p>{{ borough }}</p>
+    <h2>{{ request.complaint_type }}</h2>
+    <p>{{ request.descriptor }}</p>
+    <p>Called {{ request.agency_name }}, {{ request.agency }}</p>
+    <p>Address: {{ request.incident_address }}, {{ request.incident_zip }}</p>
+    <p v-if="request.status === 'Closed'">Date Closed: {{ request.closed_date }}</p>
+    <p v-else>Date Created: {{ request.created_date }}</p>
+    <p>{{ request.borough }}</p>
+    <p>{{ request.status }}</p>
   </div>
 </template>
 
 <script setup>
 defineProps({
-  borough: String,
-  status: String,
-  date: String, //create method for date
-  address: String,
-  agencyName: String,
-  complaintType: String,
-  description: String
+  request: Object,
+  id: Number
+  
 })
 </script>
 
