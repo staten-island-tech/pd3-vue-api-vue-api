@@ -1,9 +1,12 @@
 <template>
-  <div></div>
+  <div class="container">
+  <Card></Card>
+  </div>
 </template>
 
-<script>
+<script setup>
 import { ref, onMounted } from 'vue'
+import Card from "../components/Card.vue"
 const call = ref('')
 async function getCall() {
   let result = await fetch(
