@@ -20,7 +20,6 @@
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 import Card from '../components/Card.vue'
-import SearchBar from '../components/SearchBar.vue'
 const calls = ref('')
 const filteredCalls = ref('')
 let currentPage = ref(1)
@@ -49,24 +48,6 @@ const hasNext = computed(() => {
   return calls.value && calls.value.length === pageSize
 })
 
-function filterCalls(searchTerm) {
-  filteredCalls.value = calls.value.filter((call) => {
-    return (
-      (call.incident_address &&
-        call.incident_address.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (call.borough && call.borough.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (call.complaint_type &&
-        call.complaint_type.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (call.descriptor && call.descriptor.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (call.agency_name && call.agency_name.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (call.agency && call.agency.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (call.incident_zip && call.incident_zip.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (call.closed_date && call.closed_date.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (call.created_date && call.created_date.toLowerCase().includes(searchTerm.toLowerCase())) ||
-      (call.status && call.status.toLowerCase().includes(searchTerm.toLowerCase()))
-    )
-  })
-}
 </script>
 
 <style scoped>
