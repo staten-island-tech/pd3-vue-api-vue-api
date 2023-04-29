@@ -1,24 +1,25 @@
 <template>
-  <router-link :to="path" class="card">
+  <div class="card">
     <h2>{{ request.complaint_type }}</h2>
     <p>Description: {{ request.descriptor }}</p>
     <p>Called {{ request.agency_name }}, {{ request.agency }}</p>
-    <p>Address: {{ request.incident_address }}, {{ request.incident_zip }}</p>
+
+    <p v-if="request.address_type === 'ADDRESS'">Address: {{ request.incident_address }}, {{ request.incident_zip }}</p>
+    <p v-else-if="request.address_type === 'INTERSECTION'">{{ request.intersection_street_1 }}</p>
+    <p v-else>N/A</p>
     <p v-if="request.status === 'Closed'">Date Closed: {{ request.closed_date }}</p>
     <p v-else>Date Created: {{ request.created_date }}</p>
     <p>Borough: {{ request.borough }}</p>
     <p>Status: {{ request.status }}</p>
-  </router-link>
+  </div>
   <!-- updated date -->
 </template>
 
 <script setup>
-import {computed} from 'vue'
 const props = defineProps({
   request: Object,
   id: Number
 })
-const path = computed(()=>{return `/Data/${props.request}`})
 </script>
 
 <style scoped>
