@@ -2,5 +2,5 @@
 
 <template>
   <RouterLink to="/boroughs">Doughnut</RouterLink>
-  <RouterLink to="/years">Line Chart</RouterLink>
+  <RouterLink to="/years">Line</RouterLink>
 </template>

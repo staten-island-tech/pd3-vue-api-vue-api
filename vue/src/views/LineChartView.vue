@@ -1,5 +1,5 @@
 <template>
- <LineChartView/>
+  <LineChart />
 </template>
 
 <script>

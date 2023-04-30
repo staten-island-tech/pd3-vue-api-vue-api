@@ -17,14 +17,15 @@ export default {
       loaded: false,
       chartData: {
         labels: ['BRONX', 'BROOKLYN', 'MANHATTAN', 'QUEENS', 'STATEN ISLAND', 'Unspecified'],
-        datasets: [{
-          data: [],
-        }]
+        datasets: [
+          {
+            data: []
+          }
+        ]
       },
       chartOptions: {
         responsive: true,
-        maintainAspectRatio: true,
-        backgroundColor: ['#333ED4', '#2FA236', '#A0D636', '#EEDE04', '#F76915', '#FD0100'],
+        backgroundColor: ['#333ED4', '#2FA236', '#A0D636', '#EEDE04', '#F76915', '#FD0100']
       }
     }
   },
@@ -35,11 +36,9 @@ export default {
         'https://data.cityofnewyork.us/resource/erm2-nwe9.json?$where=created_date%3E=%272010-01-01T00:00:00.000%27&$group=borough&$select=borough,count(*)'
       )
       const data = await response.json()
-      for (let i = 0; i < data.length-1; i++) {
+      for (let i = 0; i < data.length - 1; i++) {
         this.chartData.datasets[0].data.push(data[i].count)
       }
-
-
 
       this.loaded = true
     } catch (e) {
@@ -50,4 +49,4 @@ export default {
 }
 </script>
 
-<style ></style>
+<style></style>
