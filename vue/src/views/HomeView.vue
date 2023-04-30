@@ -1,13 +1,10 @@
 <template>
   <div>
     <div>311 Calls from 2010 to the present</div>
+    <RouterLink to="/boroughs">Doughnut</RouterLink>
+    <RouterLink to="/years">Line</RouterLink>
     <div class="container">
-      <Card
-        v-for="(call, index) in calls"
-        :key="call.unique_key"
-        :id="index + 1"
-        :request="call"
-      >
+      <Card v-for="(call, index) in calls" :key="call.unique_key" :id="index + 1" :request="call">
       </Card>
     </div>
     <div class="pagination">
@@ -35,12 +32,12 @@ async function getCall() {
 }
 
 function nextPage() {
-  currentPage.value ++ 
+  currentPage.value++
   getCall()
 }
 
 function prevPage() {
-  currentPage.value --
+  currentPage.value--
   getCall()
 }
 
@@ -48,7 +45,6 @@ onMounted(() => {
   getCall()
 })
 </script>
-
 
 <style scoped>
 .container {
@@ -60,3 +56,4 @@ onMounted(() => {
   margin: 2rem auto;
 }
 </style>
+<script setup></script>
