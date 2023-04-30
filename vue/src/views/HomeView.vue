@@ -1,7 +1,6 @@
 <script setup></script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <RouterLink to="/boroughs">Doughnut</RouterLink>
+  <RouterLink to="/years">Line Chart</RouterLink>
 </template>

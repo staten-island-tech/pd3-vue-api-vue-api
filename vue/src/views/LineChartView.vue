@@ -1,11 +1,11 @@
 <template>
-  <div></div>
+ <LineChartView/>
 </template>
 
 <script>
 import LineChart from '../components/LineChart.vue'
 export default {
-  name: 'App',
+  name: 'LineChartView',
   components: { LineChart }
 }
 </script>
