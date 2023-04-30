@@ -3,8 +3,9 @@
     <h2>{{ request.complaint_type }}</h2>
     <p>Description: {{ request.descriptor }}</p>
     <p>Called {{ request.agency_name }}, {{ request.agency }}</p>
-
-    <p v-if="request.address_type === 'ADDRESS'">Address: {{ request.incident_address }}, {{ request.incident_zip }}</p>
+    <p v-if="request.address_type === 'ADDRESS'">
+      Address: {{ request.incident_address }}, {{ request.incident_zip }}
+    </p>
     <p v-else-if="request.address_type === 'INTERSECTION'">{{ request.intersection_street_1 }}</p>
     <p v-else>N/A</p>
     <p v-if="request.status === 'Closed'">Date Closed: {{ request.closed_date }}</p>
