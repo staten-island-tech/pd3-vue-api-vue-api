@@ -36,7 +36,7 @@ export default {
         ]
       },
       chartOptions: {
-        responsive: true
+        responsive: true,
       }
     }
   },

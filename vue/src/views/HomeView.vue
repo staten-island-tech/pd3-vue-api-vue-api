@@ -1,13 +1,10 @@
 <template>
   <div>
-    <div>311 Calls from 2010 to the present</div>
-    <RouterLink to="/boroughs">Doughnut</RouterLink>
-    <RouterLink to="/years">Line</RouterLink>
     <div class="container">
       <Card v-for="(call, index) in calls" :key="call.unique_key" :id="index + 1" :request="call">
       </Card>
     </div>
-    <div class="pagination">
+    <div class="page">
       <button v-if="currentPage > 1" @click="prevPage()">Previous</button>
       <span>Page {{ currentPage }}</span>
       <button v-if="calls.length === pageSize" @click="nextPage()">Next</button>
@@ -20,7 +17,7 @@ import { ref, onMounted } from 'vue'
 import Card from '../components/Card.vue'
 const calls = ref('')
 const currentPage = ref(1)
-const pageSize = 12
+const pageSize = 15
 
 async function getCall() {
   let offset = (currentPage.value - 1) * pageSize
@@ -55,5 +52,11 @@ onMounted(() => {
   width: 90vw;
   margin: 2rem auto;
 }
+.page {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  width: 200px;
+  height: 20px;
+}
 </style>
-<script setup></script>

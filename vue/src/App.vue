@@ -3,10 +3,16 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <nav>
+  
+  
+    <h1 class="title"> 311 Calls from 2010 to the present </h1>
+    <nav>
     <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/boroughs">Doughnut</RouterLink>
+    <RouterLink to="/years">Line</RouterLink>
   </nav>
   <RouterView />
+
 </template>
 
 <style scoped>
@@ -43,6 +49,8 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
+}
+.title {text-align:center
 }
 
 @media (min-width: 1024px) {

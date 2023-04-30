@@ -28,8 +28,8 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  width: 27vw;
-  height: 65vh;
+  width: 23vw;
+  height: 40vh;
   margin: 1rem auto;
   align-items: center;
   background-color: var(--secondary);
