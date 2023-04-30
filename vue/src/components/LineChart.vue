@@ -1,5 +1,5 @@
 <template>
-  <h1 class="title">Years</h1>
+  <h2 class="title">Years</h2>
   <Line v-if="loaded" :data="chartData" :options="chartOptions" />
 </template>
 

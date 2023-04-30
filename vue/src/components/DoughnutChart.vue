@@ -1,5 +1,5 @@
 <template>
-  <h1 class="title">Boroughs</h1>
+  <h2 class="title">Boroughs</h2>
   <Doughnut v-if="loaded" :data="chartData" :options="chartOptions" />
 </template>
 
